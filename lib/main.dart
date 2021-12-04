@@ -77,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    _Api_delete("1");
+    _Api_post();
    
   }
 

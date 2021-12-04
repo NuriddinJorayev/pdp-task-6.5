@@ -40,7 +40,7 @@ class Rest_APi {
   // post mathod
   static Future<String> Post(String api_url, Map<String, String> param) async {
     var uri = Uri.http(base, api_url);
-    var response = await http.post(uri, headers: apiHeader, body: jsonEncode(param));
+    var response = await http.post(uri, headers: apiHeader, body: param);
     if (response.statusCode == 200 || response.statusCode == 201) {
       return response.body;
     }
@@ -51,7 +51,7 @@ class Rest_APi {
   static Future<String> Put(
       String api_url, String id, Map<String, String> param) async {
     var uri = Uri.http(base, api_url + id);
-    var response = await http.put(uri, headers: apiHeader, body: jsonEncode(param));
+    var response = await http.put(uri, headers: apiHeader, body: param);
     if (response.statusCode == 200) {
       return response.body;
     }
